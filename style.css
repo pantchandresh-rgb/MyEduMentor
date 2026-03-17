@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.btn {
+  background: #00a86b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #007f5f;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.slider {
+  flex: 1;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.slide.active {
+  display: block;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.features .grid,
+.tutors .grid,
+.how .grid,
+.testimonials .grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.tutor-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: green;
+}
+
+.whatsapp {
+  display: block;
+  margin-top: 10px;
+  color: #25D366;
+}
+
+.form-section {
+  text-align: center;
+  padding: 40px;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+footer {
+  background: #111;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.copy {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+}
+
+/* Mobile */
+@media(max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+}
