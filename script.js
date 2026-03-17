@@ -47,3 +47,11 @@ document.querySelectorAll("nav a").forEach(link => {
       .scrollIntoView({ behavior: "smooth" });
   });
 });
+
+// SCROLL BUTTONS (Book Demo, Get Free Demo)
+document.querySelectorAll(".scroll-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelector("#contact")
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
