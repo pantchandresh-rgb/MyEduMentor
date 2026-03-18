@@ -12,15 +12,23 @@ let slides = document.querySelectorAll(".slide");
 let index = 0;
 
 function showSlide() {
-  slides.forEach(slide => slide.classList.remove("active"));
+  slides.forEach(s => s.classList.remove("active"));
 
-  slides[index].classList.add("active");
+  let attempts = 0;
+
+  while (attempts < slides.length) {
+    if (slides[index].complete && slides[index].naturalHeight !== 0) {
+      slides[index].classList.add("active");
+      break;
+    }
+    index = (index + 1) % slides.length;
+    attempts++;
+  }
 
   index = (index + 1) % slides.length;
 }
 
 setInterval(showSlide, 3000);
-
 
 // FORM HANDLING
 const form = document.getElementById("leadForm");
