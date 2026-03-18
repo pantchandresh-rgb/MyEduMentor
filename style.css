@@ -82,14 +82,17 @@ nav a {
 }
 
 .slider {
-  flex: 2;
+  position: relative;
+  width: 100%;
 }
 
 /* SLIDER */
 .slide {
-  width: 100% !important;
-  height: 400px !important;
+  width: 100%;
+  height: 380px;
   object-fit: cover;
+  border-radius: 12px;
+  display: none;
 }
 
 .slide.active {
@@ -99,7 +102,8 @@ nav a {
 /* GRID */
 .tutors .grid {
   display: grid !important;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 25px !important;
 }
 
 /* CARDS */
@@ -111,12 +115,27 @@ nav a {
   text-align: center;
 }
 
+.tutors .grid,
+.how .grid,
+.testimonials .grid {
+  margin-top: 20px;
+}
+
+
+
+
 /* TUTORS */
 .tutor-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.tutor-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
 }
 
 .tutor-card:hover {
