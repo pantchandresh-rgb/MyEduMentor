@@ -7,22 +7,19 @@ toggle.onclick = () => {
 };
 
 // IMAGE SLIDER
+
 let slides = document.querySelectorAll(".slide");
 let index = 0;
 
 function showSlide() {
-  slides.forEach((slide, i) => {
-    slide.style.opacity = "0";
-    slide.style.position = "absolute";
-  });
+  slides.forEach(slide => slide.classList.remove("active"));
 
-  slides[index].style.opacity = "1";
-  slides[index].style.position = "relative";
+  slides[index].classList.add("active");
 
   index = (index + 1) % slides.length;
 }
 
-setInterval(showSlide, 3500);
+setInterval(showSlide, 3000);
 
 
 // FORM HANDLING

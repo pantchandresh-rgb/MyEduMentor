@@ -80,16 +80,21 @@ nav a {
 
 .slider {
   flex: 1.5;
+  position : relative; 	
 }
 
 .slide {
+  position: absolute;
   width: 100%;
-  display: none;
-  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
 }
 
 .slide.active {
-  display: block;
+    opacity: 1;
+  position: relative;
+
 }
 
 .slider img {
