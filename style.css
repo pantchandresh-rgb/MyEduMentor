@@ -79,7 +79,7 @@ nav a {
 
 
 .slider {
-  flex: 1;
+  flex: 1.5;
 }
 
 .slide {
@@ -93,8 +93,10 @@ nav a {
 }
 
 .slider img {
-  height: 300px;
+  width: 100%;
+  height: 380px; /* bigger */
   object-fit: cover;
+  border-radius: 16px;
 }
 
 .grid {
@@ -182,6 +184,23 @@ footer {
   text-decoration: none;
 }
 
+.tooltip {
+  position: absolute;
+  right: 60px;
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.floating-whatsapp:hover .tooltip {
+  opacity: 1;
+}}
+
 .menu-toggle {
   display: none;
   font-size: 24px;
@@ -228,3 +247,4 @@ h2 {
 .cta-banner h2 {
   font-size: 28px;
 }
+

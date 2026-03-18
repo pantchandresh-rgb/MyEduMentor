@@ -11,12 +11,19 @@ let slides = document.querySelectorAll(".slide");
 let index = 0;
 
 function showSlide() {
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[index].classList.add("active");
+  slides.forEach((slide, i) => {
+    slide.style.opacity = "0";
+    slide.style.position = "absolute";
+  });
+
+  slides[index].style.opacity = "1";
+  slides[index].style.position = "relative";
+
   index = (index + 1) % slides.length;
 }
 
-setInterval(showSlide, 3000);
+setInterval(showSlide, 3500);
+
 
 // FORM HANDLING
 const form = document.getElementById("leadForm");
@@ -24,6 +31,8 @@ const successMsg = document.getElementById("successMsg");
 
 form.addEventListener("submit", function(e) {
   e.preventDefault();
+
+  successMsg.innerText = "Submitting...";
 
   const data = {
     name: form[0].value,
@@ -33,11 +42,21 @@ form.addEventListener("submit", function(e) {
     phone: form[4].value
   };
 
-  localStorage.setItem("lead", JSON.stringify(data));
-
-  successMsg.innerText = "✅ Submitted successfully!";
-  form.reset();
+  fetch("https://script.google.com/macros/s/AKfycbyOW8gA8q8RYN-JqbFxqNiv91ds71-YsRaOkzMmSW7YMhf7UCtT00bYzM3L_JOUZSg-Xw/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.text())
+  .then(() => {
+    successMsg.innerText = "✅ Demo booked successfully!";
+    form.reset();
+  })
+  .catch(() => {
+    successMsg.innerText = "❌ Error! Try again.";
+  });
 });
+
+
 
 // SMOOTH SCROLL
 document.querySelectorAll("nav a").forEach(link => {
