@@ -1,5 +1,9 @@
 section {
-  padding: 70px 0;
+  padding: 50px 0;
+}
+
+.features {
+  margin-top: -30px;
 }
 
 * {
@@ -33,6 +37,13 @@ nav a {
   font-weight: 600;
 }
 
+.mem {
+  font-size: 14px;
+  padding: 3px 8px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  margin-left: 6px;
+}
 
 .nav {
   display: flex;
@@ -86,10 +97,13 @@ nav a {
 .slide {
   position: absolute;
   width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 16px;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
-
+  transition: opacity 1s;
 }
+
 
 .slide.active {
     opacity: 1;
@@ -169,15 +183,14 @@ form input {
 
 .form-container {
   display: flex;
-  justify-content: center;
-  align-items: stretch;
   gap: 30px;
   max-width: 1100px;
   margin: auto;
 }
 
 /* LEFT IMAGE */
-.form-left {
+.form-left,
+.form-right {
   flex: 1;
 }
 
@@ -195,16 +208,14 @@ form {
   background: #fff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
 }
 
 /* RIGHT SIDE */
 .form-right {
-  flex: 1;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  form-right {
+  height: fit-content;
+}
 }
 
 .form-right ul {
@@ -246,10 +257,12 @@ footer {
   color: #fff;
   padding: 6px 10px;
   border-radius: 6px;
-  font-size: 12px;
   opacity: 0;
   transition: 0.3s;
-  white-space: nowrap;
+}
+
+.floating-whatsapp:hover .tooltip {
+  opacity: 1;
 }
 
 .floating-whatsapp:hover .tooltip {
@@ -279,12 +292,12 @@ h2 {
     flex-direction: column;
   }
 
-  .form-left img {
-    height: 200px;
+  .slide {
+    height: 220px;
   }
 }
-
-  nav.active {
+ 
+ nav.active {
     display: flex;
   }
 
