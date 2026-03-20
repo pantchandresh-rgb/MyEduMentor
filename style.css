@@ -216,11 +216,26 @@ footer .grid {
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
+  .how .grid {
+    grid-template-columns: 1fr !important;
   }
 
-  .form-container {
-    flex-direction: column;
+  .testimonials .grid {
+    grid-template-columns: 1fr !important;
   }
+}
+
+
+/* ===== FORCE HOW IT WORKS GRID ===== */
+.how .grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px;
+}
+
+/* ===== FORCE TESTIMONIALS GRID ===== */
+.testimonials .grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px;
 }
